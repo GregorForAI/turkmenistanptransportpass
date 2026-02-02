@@ -2,87 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Turkmenistan Transport System Design Tokens */
+    --background: 0 0% 98%;
+    --foreground: 208 26% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 208 26% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 208 26% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Official Green */
+    --primary: 148 77% 27%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light Gray */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 208 26% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 208 15% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 148 77% 27%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Error/Warning - Red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Success */
+    --success: 148 77% 27%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Warning/Pending */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 148 77% 27%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for transport app */
+    --balance-bg: 148 77% 27%;
+    --balance-text: 0 0% 100%;
+    --emergency-bg: 0 72% 51%;
+    --emergency-text: 0 0% 100%;
+    --income: 148 77% 35%;
+    --expense: 0 72% 51%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 208 26% 10%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 208 26% 14%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 208 26% 14%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 148 77% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 208 20% 20%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 208 20% 20%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 148 77% 35%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 208 20% 25%;
+    --input: 208 20% 25%;
+    --ring: 148 77% 35%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +112,121 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Large touch targets for accessibility */
+  button, a, [role="button"] {
+    @apply min-h-[48px];
+  }
+}
+
+@layer components {
+  /* Balance card styling */
+  .balance-card {
+    @apply bg-primary text-primary-foreground rounded-2xl p-6;
+  }
+
+  /* Large action button */
+  .action-btn {
+    @apply flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-card border-2 border-border min-h-[100px] transition-all active:scale-95;
+  }
+
+  .action-btn:hover {
+    @apply border-primary/30;
+  }
+
+  /* Emergency button */
+  .emergency-btn {
+    @apply flex items-center justify-center gap-3 p-4 rounded-xl bg-destructive text-destructive-foreground min-h-[56px] font-semibold transition-all active:scale-95;
+  }
+
+  /* Support button */
+  .support-btn {
+    @apply flex items-center justify-center gap-3 p-4 rounded-xl bg-primary text-primary-foreground min-h-[56px] font-semibold transition-all active:scale-95;
+  }
+
+  /* Vehicle card */
+  .vehicle-card {
+    @apply bg-card rounded-xl p-4 border-2 border-border;
+  }
+
+  /* Transaction item */
+  .transaction-item {
+    @apply flex items-center justify-between p-4 bg-card rounded-xl border border-border;
+  }
+
+  /* Payment method card */
+  .payment-method {
+    @apply flex items-center gap-4 p-4 bg-card rounded-xl border-2 border-border transition-all;
+  }
+
+  .payment-method:active {
+    transform: scale(0.98);
+  }
+
+  .payment-method:hover {
+    @apply border-primary/30;
+  }
+
+  /* Tab navigation */
+  .nav-tab {
+    @apply flex flex-col items-center justify-center gap-1 py-2 px-4 min-h-[64px] text-muted-foreground transition-colors;
+  }
+
+  .nav-tab.active {
+    @apply text-primary;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3;
+  }
+
+  /* Info row in profile/details */
+  .info-row {
+    @apply flex items-center justify-between py-4 border-b border-border;
+  }
+
+  .info-row:last-child {
+    @apply border-b-0;
+  }
+
+  /* Toggle setting row */
+  .setting-row {
+    @apply flex items-center justify-between py-4;
+  }
+
+  /* Filter pill */
+  .filter-pill {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-colors;
+  }
+
+  .filter-pill.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .filter-pill:not(.active) {
+    @apply bg-secondary text-secondary-foreground;
+  }
+}
+
+@layer utilities {
+  .active\:scale-98:active {
+    transform: scale(0.98);
+  }
+
+  .active\:scale-95:active {
+    transform: scale(0.95);
+  }
+
+  /* Safe area for mobile */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top, 20px);
   }
 }
