@@ -19,7 +19,7 @@ export const AppHeader = ({
   const isHome = location.pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 bg-card border-b border-border safe-area-top">
+    <header className="sticky top-0 z-50 bg-background safe-area-top">
       <div className="flex items-center justify-between h-14 px-4">
         {/* Back button */}
         <div className="w-12">

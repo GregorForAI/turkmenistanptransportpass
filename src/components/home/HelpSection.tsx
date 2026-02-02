@@ -1,13 +1,15 @@
 import { Phone, MessageCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const HelpSection = () => {
+  const navigate = useNavigate();
+
   const handleEmergencyCall = () => {
     window.location.href = "tel:+99312123456";
   };
 
   const handleSupportChat = () => {
-    // Navigate to support chat
-    console.log("Open support chat");
+    navigate("/support-chat");
   };
 
   return (

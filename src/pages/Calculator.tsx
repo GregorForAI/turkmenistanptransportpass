@@ -179,10 +179,11 @@ const Calculator = () => {
               </div>
             </div>
 
-            <div className="bg-success/10 rounded-xl p-4 text-center">
-              <span className="text-success font-semibold text-lg">
-                Выгода при онлайн-оплате: {savings.toFixed(2)} TMT
-              </span>
+            <div className="rounded-xl p-4 text-center border-2 border-dashed border-primary/30 bg-primary/5">
+              <p className="text-muted-foreground text-sm mb-1">Ваша экономия при онлайн-оплате</p>
+              <p className="text-primary font-bold text-2xl">
+                {savings.toFixed(2)} TMT
+              </p>
             </div>
           </div>
         )}
