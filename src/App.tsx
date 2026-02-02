@@ -12,6 +12,10 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Security from "./pages/Security";
 import Notifications from "./pages/Notifications";
+import QRPayment from "./pages/QRPayment";
+import AddVehicle from "./pages/AddVehicle";
+import SupportChat from "./pages/SupportChat";
+import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +36,11 @@ const App = () => (
           <Route path="/settings" element={<Settings />} />
           <Route path="/security" element={<Security />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/qr-payment" element={<QRPayment />} />
+          <Route path="/add-vehicle" element={<AddVehicle />} />
+          <Route path="/support-chat" element={<SupportChat />} />
+          <Route path="/change-password" element={<ComingSoon />} />
+          <Route path="/vehicle/:id" element={<ComingSoon />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

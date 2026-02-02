@@ -9,7 +9,8 @@ import {
   Settings, 
   ChevronRight,
   Edit2,
-  Plus
+  Plus,
+  LogOut
 } from "lucide-react";
 
 const Profile = () => {
@@ -166,6 +167,19 @@ const Profile = () => {
             <span className="font-medium text-foreground">Настройки</span>
           </div>
           <ChevronRight className="w-5 h-5 text-muted-foreground" />
+        </button>
+
+        {/* Logout button */}
+        <button
+          onClick={() => {
+            // Handle logout
+            console.log("Logout");
+            navigate("/");
+          }}
+          className="w-full flex items-center justify-center gap-2 p-4 rounded-xl border-2 border-destructive text-destructive font-medium active:scale-98 transition-transform"
+        >
+          <LogOut className="w-5 h-5" />
+          <span>Выйти из аккаунта</span>
         </button>
       </div>
     </AppLayout>
