@@ -29,6 +29,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/topup" element={<TopUp />} />
+          <Route path="/topup/card" element={<ComingSoon />} />
+          <Route path="/topup/sms" element={<ComingSoon />} />
+          <Route path="/topup/scratch" element={<ComingSoon />} />
+          <Route path="/topup/terminal" element={<ComingSoon />} />
           <Route path="/history" element={<History />} />
           <Route path="/transaction/:id" element={<TransactionDetail />} />
           <Route path="/calculator" element={<Calculator />} />

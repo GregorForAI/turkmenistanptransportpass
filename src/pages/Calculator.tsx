@@ -164,26 +164,33 @@ const Calculator = () => {
 
         {/* Result */}
         {entryPoint && exitPoint && (
-          <div className="mt-6 space-y-3 animate-fade-in">
-            <div className="bg-card rounded-xl p-4 border border-border">
-              <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Наличными</span>
-                <span className="text-xl font-bold text-foreground">{cashPrice.toFixed(2)} TMT</span>
+          <div className="mt-6 space-y-4 animate-fade-in">
+            {/* Price comparison */}
+            <div className="bg-secondary/50 rounded-2xl p-5 space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-border">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground" />
+                  <span className="text-muted-foreground text-sm">Наличными</span>
+                </div>
+                <span className="text-lg font-semibold text-foreground">{cashPrice.toFixed(2)} TMT</span>
               </div>
-            </div>
-            
-            <div className="bg-primary rounded-xl p-4">
+              
               <div className="flex items-center justify-between">
-                <span className="text-primary-foreground/80">Онлайн-оплата</span>
-                <span className="text-xl font-bold text-primary-foreground">{onlinePrice.toFixed(2)} TMT</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span className="text-primary text-sm font-medium">Онлайн-оплата</span>
+                </div>
+                <span className="text-lg font-semibold text-primary">{onlinePrice.toFixed(2)} TMT</span>
               </div>
             </div>
 
-            <div className="rounded-xl p-4 text-center border-2 border-dashed border-primary/30 bg-primary/5">
-              <p className="text-muted-foreground text-sm mb-1">Ваша экономия при онлайн-оплате</p>
-              <p className="text-primary font-bold text-2xl">
+            {/* Savings highlight */}
+            <div className="bg-primary/10 rounded-2xl p-5 text-center">
+              <p className="text-muted-foreground text-xs uppercase tracking-wide mb-1">Ваша экономия</p>
+              <p className="text-primary font-bold text-3xl">
                 {savings.toFixed(2)} TMT
               </p>
+              <p className="text-muted-foreground text-xs mt-2">при онлайн-оплате</p>
             </div>
           </div>
         )}
